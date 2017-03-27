@@ -10,7 +10,15 @@ module.exports = function(sequelize, DataTypes) {
         Reviews.belongsTo(models.UserShows,{
           foreignKey: 'userShow'
         })
+      },
+
+      associate: function(models) {
+        Reviews.hasMany(models.Comments, {
+            foreignKey: 'id'
+        })
       }
+
+
     }
   });
   return Reviews;
