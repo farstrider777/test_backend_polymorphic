@@ -5,7 +5,11 @@ const ReviewsController = require("../controllers/ReviewsController");
 const CommentsController = require("../controllers/CommentsController");
 
 module.exports = (app) => {
-  // Add your routes here
+  app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
   app.post('/users',UsersController.create);
   app.post('/usershows',UserShowsController.create);
   app.get('/usershows/:id',UserShowsController.getShowUser);
