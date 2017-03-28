@@ -12,8 +12,9 @@ module.exports = (app) => {
 });
   // app.get('/reviews', ReviewsController.index)
   app.post('/users',UsersController.create);
-  app.post('/login',UsersController.login)
-  app.get('/users',UsersController.index)
+  app.post('/login',UsersController.login);
+  app.get('/users',UsersController.index);
+  app.delete('/users/:id',UsersController.destroy);
   app.post('/usershows',UserShowsController.create);
   app.get('/usershows/:id',UserShowsController.getShowUser);
   app.post('/reviews',ReviewsController.create);

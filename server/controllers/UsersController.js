@@ -55,4 +55,14 @@ create (req, res) {
       .catch(error => res.status(400).send(error));
     },
 
+  destroy (req, res) {
+    Users.destroy({
+     where: {
+                id:req.params.id
+            }
+      })
+    .then(users => res.status(201).send(users))
+    .catch(error => res.status(400).send(error));
+  }
+
 };
