@@ -11,6 +11,7 @@ module.exports = (app) => {
   next();
 });
   app.post('/users',UsersController.create);
+  app.post('/login',UsersController.login)
   app.post('/usershows',UserShowsController.create);
   app.get('/usershows/:id',UserShowsController.getShowUser);
   app.post('/reviews',ReviewsController.create);
