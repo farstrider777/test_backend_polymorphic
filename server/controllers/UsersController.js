@@ -48,4 +48,11 @@ create (req, res) {
     .then(users => res.status(201).send(users))
     .catch(error => res.status(400).send(error));
   },
+
+  index (req, res) {
+      Users.findAll()
+      .then(users => res.status(201).send(users))
+      .catch(error => res.status(400).send(error));
+    },
+
 };

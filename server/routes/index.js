@@ -10,8 +10,10 @@ module.exports = (app) => {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+  // app.get('/reviews', ReviewsController.index)
   app.post('/users',UsersController.create);
   app.post('/login',UsersController.login)
+  app.get('/users',UsersController.index)
   app.post('/usershows',UserShowsController.create);
   app.get('/usershows/:id',UserShowsController.getShowUser);
   app.post('/reviews',ReviewsController.create);
