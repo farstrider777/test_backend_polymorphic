@@ -5,6 +5,10 @@ const appSecrets = require("../config/secret");
 
 module.exports = {
   login (req, res) {
+    if (!(req.body.email && req.body.hashedPassword)) {
+      return res.status(400).send({ message: "Requires email and hashedPassword" });
+    }
+
      Users.findOne({
        where: {
          email: req.body.email

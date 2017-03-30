@@ -3,6 +3,7 @@ const UsersController = require("../controllers/UsersController");
 const UserShowsController = require("../controllers/UserShowsController");
 const ReviewsController = require("../controllers/ReviewsController");
 const CommentsController = require("../controllers/CommentsController");
+const middleware = require("../middleware");
 
 module.exports = (app) => {
   app.use(function(req, res, next) {
@@ -15,7 +16,7 @@ module.exports = (app) => {
   app.post('/login',UsersController.login);
   app.get('/users',UsersController.index);
   app.delete('/users/:id',UsersController.destroy);
-  app.post('/usershows',UserShowsController.create);
+  app.post('/usershows', middleware.authenticate, UserShowsController.create);
   app.get('/usershows/:id',UserShowsController.getShowUser);
   app.post('/reviews',ReviewsController.create);
   app.get('/reviews/:id',ReviewsController.getReviewShow);

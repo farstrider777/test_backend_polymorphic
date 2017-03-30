@@ -6,6 +6,8 @@ module.exports = {
   create (req, res) {
    //res.status(200).send("Hello world!");
       Reviews.create({
+        //will change userId
+      userId: req.user.id,
       userShow: req.body.userShow,
       ranking: req.body.ranking,
       review: req.body.review,
