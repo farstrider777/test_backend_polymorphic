@@ -55,4 +55,14 @@ module.exports = {
     .catch(error => res.status(400).send(error));
   },
 
+  getReviewsUser (req, res){
+    Reviews.findAll({
+      where: {
+        userId:req.params.userId
+      }
+    })
+    .then((review)=> res.status(200).send(review))
+    .catch(error => res.status(400).send(error));
+  },
+
 }
