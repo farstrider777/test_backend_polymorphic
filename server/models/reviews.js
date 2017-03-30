@@ -7,11 +7,11 @@ module.exports = function(sequelize, DataTypes) {
     showId: DataTypes.INTEGER
   }, {
     classMethods: {
-      associate: function(models) {
-        Reviews.belongsTo(models.UserShows,{
-          foreignKey: 'userShow'
-        })
-      },
+      // associate: function(models) {
+      //   Reviews.belongsTo(models.UserShows,{
+      //     foreignKey: 'userShow'
+      //   })
+      // },
 
       associate: function(models) {
         Reviews.hasMany(models.Comments, {

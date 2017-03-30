@@ -13,11 +13,11 @@ module.exports = function(sequelize, DataTypes) {
         })
       },
 
-      associate: function(models) {
-        UserShows.hasOne(models.Reviews, {
-            foreignKey: 'userShow'
-        })
-      }
+      // associate: function(models) {
+      //   UserShows.hasOne(models.Reviews, {
+      //       foreignKey: 'userShow'
+      //   })
+      // }
 
     }
   });

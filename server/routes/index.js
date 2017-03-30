@@ -23,4 +23,5 @@ module.exports = (app) => {
   app.get('/reviews/:id',ReviewsController.getReviewShow);
   app.post('/comments',CommentsController.create);
   app.get('/comments/:id',CommentsController.getCommentReview);
+  app.get('/showreviews/:showId',ReviewsController.getReviewsShow);
 };

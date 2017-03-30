@@ -42,5 +42,17 @@ module.exports = {
     })
     .then(photo => res.status(201).send(photo))
     .catch(error => res.status(400).send(error));
-  }
+  },
+
+
+  getReviewsShow (req, res){
+    Reviews.findAll({
+      where: {
+        showId:req.params.showId
+      }
+    })
+    .then((review)=> res.status(200).send(review))
+    .catch(error => res.status(400).send(error));
+  },
+
 }
