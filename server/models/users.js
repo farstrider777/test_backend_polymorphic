@@ -15,10 +15,13 @@ module.exports = function(sequelize, DataTypes) {
 
       associate: function(models) {
         Users.hasMany(models.UserShows, {
-          foreignKey: 'userId'
+          foreignKey: 'id'
+        });
+
+        Users.hasMany(models.Reviews, {
+          foreignKey: 'id'
         });
       }
-
       //associate2
 
     }

@@ -20,7 +20,7 @@ module.exports = (app) => {
   app.post('/usershows', middleware.authenticate, UserShowsController.create);
   app.get('/usershows/:id',UserShowsController.getShowUser);
   app.post('/reviews', middleware.authenticate, ReviewsController.create);
-  app.get('/reviews/:id',ReviewsController.getReviewShow);
+  app.get('/reviews/:id',ReviewsController.getReviewsShow);
   app.post('/comments',CommentsController.create);
   app.get('/comments/:id',CommentsController.getCommentReview);
   app.get('/showreviews/:showId',ReviewsController.getReviewsShow);

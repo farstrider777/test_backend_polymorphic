@@ -14,9 +14,13 @@ module.exports = function(sequelize, DataTypes) {
       // },
 
       associate: function(models) {
+        Reviews.belongsTo(models.Users, {
+            foreignKey: 'userId'
+        });
+
         Reviews.hasMany(models.Comments, {
             foreignKey: 'id'
-        })
+        });
       }
 
 
