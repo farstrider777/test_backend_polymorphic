@@ -67,6 +67,20 @@ create (req, res) {
       })
     .then(users => res.status(201).send(users))
     .catch(error => res.status(400).send(error));
+  },
+
+  update (req, res){
+    req.user.update(req.body, {
+      fields: ['profileUrl', 'backgroundUrl', 'firstNamelastName', 'email', 'city'],
+    })
+    // Users.findById(req.params.userid)
+    // .then(User =>
+    // Users.update(req.body, {
+    //   fields: ['profileUrl', 'backgroundUrl', 'firstNamelastName', 'email', 'city'],
+    // }))
+    .then((users) => res.status(200).send(users))
+    .catch((error) => res.status(400).send(error));
   }
+
 
 };

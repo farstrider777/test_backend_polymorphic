@@ -14,6 +14,7 @@ module.exports = (app) => {
   // app.get('/reviews', ReviewsController.index)
   app.post('/users',UsersController.create);
   app.post('/login',UsersController.login);
+  app.put('/updateuser',middleware.authenticate,UsersController.update);
   app.get('/users',UsersController.index);
   app.delete('/users/:id',UsersController.destroy);
   // maybe remove usershows route if we dont' use it to make watchlist or something
