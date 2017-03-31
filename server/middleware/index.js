@@ -11,7 +11,7 @@ module.exports = {
           console.log(token)
           // If they didn't provide a token, send them away.
           if (!token) {
-            res.status(401).send({
+            return res.status(401).send({
               message: "Must be authenticated to use this route."
             });
           }
@@ -26,7 +26,7 @@ module.exports = {
 
               // If no matching user was found, send them away.
               if (!user) {
-                res.status(401).send({ message: "Error during authentication." });
+                return res.status(401).send({ message: "Error during authentication." });
               }
 
               // Otherwise, attach the user to the request object.
@@ -37,7 +37,7 @@ module.exports = {
           } catch (e) {
             console.log(e);
             // Token was garbage. Tell 'em so.
-            res.status(401).send({ message: "Invalid token." });
+            return res.status(401).send({ message: "Invalid token." });
           }
    }
 };
