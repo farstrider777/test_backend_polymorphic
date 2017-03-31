@@ -52,7 +52,6 @@ module.exports = {
   getReviewsShow (req, res){
     Reviews.findAll({
       include: [
-        //{model: UserShows, attributes: ['showName']},
         {model: Users}
       ],
 
@@ -66,6 +65,10 @@ module.exports = {
 
   getReviewsUser (req, res){
     Reviews.findAll({
+      include: [
+        {model: Users}
+      ],
+
       where: {
         userId:req.params.userId
       }
