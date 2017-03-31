@@ -53,7 +53,7 @@ module.exports = {
     Reviews.findAll({
       include: [
         //{model: UserShows, attributes: ['showName']},
-        {model: Users, attributes: ['profileUrl']}
+        {model: Users}
       ],
 
       where: {
