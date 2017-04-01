@@ -7,7 +7,7 @@ const middleware = require("../middleware");
 
 module.exports = (app) => {
   app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");  
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, access-token");
   next();
@@ -21,9 +21,9 @@ module.exports = (app) => {
   // maybe remove usershows route if we dont' use it to make watchlist or something
   app.post('/usershows', middleware.authenticate, UserShowsController.create);
   app.get('/usershows/:id',UserShowsController.getShowUser);
-  app.post('/reviews', middleware.authenticate, ReviewsController.create);
+  app.post('/reviews',middleware.authenticate, ReviewsController.create);
   app.get('/reviews/:id',ReviewsController.getReviewsShow);
-  app.post('/comments',CommentsController.create);
+  app.post('/comments',middleware.authenticate, CommentsController.create);
   app.get('/comments/:id',CommentsController.getCommentReview);
   app.get('/showreviews/:showId',ReviewsController.getReviewsShow);
   app.get('/userreviews/:userId',ReviewsController.getReviewsUser);
