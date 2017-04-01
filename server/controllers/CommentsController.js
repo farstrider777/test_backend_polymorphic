@@ -12,14 +12,15 @@ module.exports = {
   },
 
   getCommentReview (req, res) {
-    Comments.findById(req.params.id, {
+    Comments.findAll(req.params.id, {
       include: [
         {model: Reviews, attributes: ['review']},
-        // {model: Comments, include: {
-        //   model: Users, attributes: ['username']
-        // }
-      //   }
-       ]
+      ],
+
+       where: {
+         review: req.params.id
+       },
+
     })
     .then(photo => res.status(201).send(photo))
     .catch(error => res.status(400).send(error));
