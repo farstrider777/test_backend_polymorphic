@@ -12,7 +12,7 @@ module.exports = {
   },
 
   getCommentReview (req, res) {
-    Comments.findAll(req.params.id, {
+    Comments.findAll({
       include: [
         {model: Reviews, attributes: ['review']},
       ],
