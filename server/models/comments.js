@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         Comments.belongsTo(models.Reviews,{
-          foreignKey: 'id'
+          foreignKey: 'review'
         })
       },
 
