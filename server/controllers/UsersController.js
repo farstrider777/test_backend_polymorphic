@@ -80,7 +80,10 @@ create (req, res) {
     // }))
     .then((users) => res.status(200).send(users))
     .catch((error) => res.status(400).send(error));
-  }
+  },
 
+  verify (req, res){
+    console.log(req.user)
+  }
 
 };

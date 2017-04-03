@@ -27,4 +27,5 @@ module.exports = (app) => {
   app.get('/comments/:id',CommentsController.getCommentReview);
   app.get('/showreviews/:showId',ReviewsController.getReviewsShow);
   app.get('/userreviews/:userId',ReviewsController.getReviewsUser);
+  app.get('/me',middleware.authenticate,UsersController.verify);
 };
