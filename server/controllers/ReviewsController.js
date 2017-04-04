@@ -60,7 +60,9 @@ module.exports = {
         {model: Users},
         {model: Comments}
       ],
-
+      order: [
+        ['id', 'DESC']
+      ],
       where: {
         showId:req.params.showId
       },
