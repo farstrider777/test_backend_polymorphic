@@ -24,6 +24,11 @@ module.exports = {
       //userShow: userShow.id,
       ranking: req.body.ranking,
       review: req.body.review,
+      showName: req.body.showName,
+      seenIt: true,
+      posterPath: req.body.posterPath,
+      backgroundPath: req.body.backgroundPath,
+      showDescription: req.body.showDescription
     })
     .then(reviews => res.status(201).send(reviews))
     .catch(error => console.log(error))
