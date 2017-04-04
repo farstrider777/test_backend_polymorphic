@@ -24,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
         });
 
         Reviews.hasMany(models.Comments, {
-            foreignKey: 'id'
+            foreignKey: 'review'
         });
       }
 
