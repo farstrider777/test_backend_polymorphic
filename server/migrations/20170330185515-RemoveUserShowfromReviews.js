@@ -11,8 +11,8 @@ module.exports = {
 
   down: function (queryInterface, Sequelize) {
     return queryInterface.addColumn(
+      'Reviews',
       'userShow',
-      'showId',
       Sequelize.INTEGER
     )
   }
