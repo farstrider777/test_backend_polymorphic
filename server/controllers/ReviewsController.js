@@ -57,7 +57,7 @@ module.exports = {
   getReviewsShow (req, res){
     Reviews.findAll({
       include: [
-        //{model: Users},
+        {model: Users},
         {model: Comments}
       ],
 
