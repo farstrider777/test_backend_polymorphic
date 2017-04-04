@@ -16,7 +16,9 @@ module.exports = {
       include: [
         {model: Reviews, attributes: ['review']},
       ],
-
+      order: [
+        ['id', 'DESC']
+      ],
        where: {
          review: req.params.id
        },

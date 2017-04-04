@@ -77,7 +77,9 @@ module.exports = {
         {model: Users},
         {model: Comments}
       ],
-
+      order: [
+        ['id', 'DESC']
+      ],
       where: {
         userId:req.params.userId
       }
