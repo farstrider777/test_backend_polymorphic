@@ -5,7 +5,11 @@ module.exports = function(sequelize, DataTypes) {
     review: DataTypes.TEXT,
     userId: DataTypes.INTEGER,
     showId: DataTypes.INTEGER,
-    posterPath: DataTypes.STRING
+    posterPath: DataTypes.STRING,
+    backgroundPath: DataTypes.STRING,
+    showName: DataTypes.STRING,
+    showDescription: DataTypes.TEXT,
+    seenIt: DataTypes.BOOLEAN,
   }, {
     classMethods: {
       // associate: function(models) {
