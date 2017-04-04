@@ -5,7 +5,7 @@ module.exports = {
     return  queryInterface.addColumn(
         'Reviews',
         'posterPath',
-        Sequelize.INTEGER
+        Sequelize.STRING
       )
   },
 
@@ -13,7 +13,7 @@ module.exports = {
     return queryInterface.removeColumn(
       'Reviews',
       'posterPath',
-      Sequelize.INTEGER
+      Sequelize.STRING
     )
   }
 };
