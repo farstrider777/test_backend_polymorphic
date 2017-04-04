@@ -3,6 +3,7 @@ const UsersController = require("../controllers/UsersController");
 const UserShowsController = require("../controllers/UserShowsController");
 const ReviewsController = require("../controllers/ReviewsController");
 const CommentsController = require("../controllers/CommentsController");
+const FollowController = require("../controllers/FollowController");
 const middleware = require("../middleware");
 
 module.exports = (app) => {
