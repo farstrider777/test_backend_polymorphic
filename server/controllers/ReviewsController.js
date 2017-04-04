@@ -82,4 +82,14 @@ module.exports = {
     .catch(error => res.status(400).send(error));
   },
 
+  deleteReview (req, res){
+    Reviews.destroy({
+     where: {
+                id:req.params.id
+            }
+      })
+    .then(reviews => res.status(201).send(reviews))
+    .catch(error => res.status(400).send(error));
+  }
+
 }

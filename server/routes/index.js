@@ -23,6 +23,7 @@ module.exports = (app) => {
   app.get('/usershows/:id',UserShowsController.getShowUser);
   app.post('/reviews',middleware.authenticate, ReviewsController.create);
   app.get('/reviews/:id',ReviewsController.getReviewsShow);
+  app.delete('/deletereview/:id',ReviewsController.deleteReview)
   app.post('/comments',middleware.authenticate, CommentsController.create);
   app.get('/comments/:id',CommentsController.getCommentReview);
   app.get('/showreviews/:showId',ReviewsController.getReviewsShow);
