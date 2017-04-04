@@ -1,6 +1,6 @@
 const Reviews = require("../models").Reviews;
 const UserShows = require("../models").UserShows;
-const Contacts = require("../models").Contacts;
+const Comments = require("../models").Comments;
 const Users = require("../models").Users;
 
 module.exports = {
