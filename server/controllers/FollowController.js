@@ -1,6 +1,8 @@
-const Comments = require("../models").Comments;
+const Relationships = require("../models").Relationships;
 
 
 module.exports = {
+  postFollow (req, res){
 
+  }
 }
