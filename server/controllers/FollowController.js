@@ -26,6 +26,23 @@ module.exports = {
     })
     .then((review)=> res.status(200).send(review))
     .catch(error => res.status(400).send(error));
+  },
+
+  getFollowing (req, res){
+    Relationships.findAll({
+      // include: [
+      //   {model: Users},
+      //   {model: Comments}
+      // ],
+      // order: [
+      //   ['id', 'DESC']
+      // ],
+      where: {
+        followerId: req.params.userId
+      },
+    })
+    .then((review)=> res.status(200).send(review))
+    .catch(error => res.status(400).send(error));
   }
 
 
