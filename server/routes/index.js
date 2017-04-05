@@ -30,5 +30,5 @@ module.exports = (app) => {
   app.get('/showreviews/:showId',ReviewsController.getReviewsShow);
   app.get('/userreviews/:userId',ReviewsController.getReviewsUser);
   app.get('/me',middleware.authenticate, UsersController.verify);
-  app.post('/follow/:userId', FollowController.postFollow);
+  app.post('/follow/:userId',middleware.authenticate, FollowController.postFollow);
 };
