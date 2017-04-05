@@ -1,5 +1,6 @@
 const Comments = require("../models").Comments;
 const Reviews = require("../models").Reviews;
+const News = require("../models").News;
 
 module.exports = {
   create (req, res) {
