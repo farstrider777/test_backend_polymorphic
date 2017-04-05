@@ -21,6 +21,10 @@ module.exports = function(sequelize, DataTypes) {
         Users.hasMany(models.Reviews, {
           foreignKey: 'userId'
         });
+
+        Users.hasMany(models.Relationships, {
+          foreignKey: 'followerId'
+        });
       }
       //associate2
 

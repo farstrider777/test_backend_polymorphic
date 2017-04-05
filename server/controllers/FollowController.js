@@ -39,13 +39,12 @@ module.exports = {
 
   getFollowing (req, res){
     Relationships.findAll({
-      // include: [
-      //   {model: Users},
-      //   {model: Comments}
-      // ],
-      // order: [
-      //   ['id', 'DESC']
-      // ],
+      include: [
+        {model: Users},
+      ],
+      order: [
+        ['id', 'DESC']
+      ],
       where: {
         followerId: req.params.userId
       },
