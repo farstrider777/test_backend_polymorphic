@@ -107,25 +107,3 @@ module.exports = {
   }
 
 }
-
-
-
-
-
-  // create (req, res) {
-  //     Comments.create({
-  //     review: req.body.review,
-  //     comment: req.body.comment,
-  //   }).then(comment => {
-  //     News.create({
-  //       commentId: comment.id,
-  //       newsType: 'comment'
-  //     })
-  //       .then(news => res.status(201).send(news))
-  //       .catch(error => console.log(error))
-  //   })
-  //   .catch(error => {
-  //     console.log(error);
-  //     res.status(400).send(error);
-  //   });
-  // },
