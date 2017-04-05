@@ -32,5 +32,6 @@ module.exports = (app) => {
   app.get('/me',middleware.authenticate, UsersController.verify);
   app.post('/follow/:userId',middleware.authenticate, FollowController.postFollow);
   app.get('/followers/:userId',FollowController.getFollowers);
-  app.get('/following/:userId',FollowController.getFollowing)
+  app.get('/following/:userId',FollowController.getFollowing);
+  app.delete('/deletefollowing/:userId',FollowController.deleteFollowing);
 };
