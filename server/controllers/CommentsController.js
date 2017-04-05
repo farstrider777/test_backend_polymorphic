@@ -9,6 +9,7 @@ module.exports = {
       comment: req.body.comment,
     }).then(comment => {
       News.create({
+        userId: req.user.id,
         commentId: comment.id,
         newsType: 'comment'
       })

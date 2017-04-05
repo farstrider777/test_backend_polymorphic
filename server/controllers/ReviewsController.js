@@ -32,6 +32,7 @@ module.exports = {
       showDescription: req.body.showDescription
     }).then(review => {
       News.create({
+        userId: req.user.id,
         reviewId: review.id,
         newsType: 'review'
       })
