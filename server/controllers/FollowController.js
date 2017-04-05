@@ -43,7 +43,7 @@ module.exports = {
     })
     .then((review)=> res.status(200).send(review))
     .catch(error => res.status(400).send(error));
-  }
+  },
 
   deleteFollowing (req, res){
     Relationships.destroy({
