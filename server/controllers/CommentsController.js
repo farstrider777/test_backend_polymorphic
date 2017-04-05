@@ -14,7 +14,10 @@ module.exports = {
         .then(news => res.status(201).send(news))
         .catch(error => console.log(error))
     })
-    .catch(error => res.status(400).send(error));
+    .catch(error => {
+      console.log(error);
+      res.status(400).send(error);
+    });
   },
 
   getCommentReview (req, res) {
