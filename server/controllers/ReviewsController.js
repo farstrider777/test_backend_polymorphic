@@ -2,6 +2,7 @@ const Reviews = require("../models").Reviews;
 const UserShows = require("../models").UserShows;
 const Comments = require("../models").Comments;
 const Users = require("../models").Users;
+const News = require("../models").News;
 
 module.exports = {
   create (req, res) {
@@ -29,8 +30,15 @@ module.exports = {
       posterPath: req.body.posterPath,
       backgroundPath: req.body.backgroundPath,
       showDescription: req.body.showDescription
+    }).then(review => {
+      News.create({
+        reviewId: review.id,
+        newsType: 'review'
+      })
+        .then(news => res.status(201).send(news))
+        .catch(error => console.log(error))
     })
-    .then(reviews => res.status(201).send(reviews))
+    //.then(reviews => res.status(201).send(reviews))
     .catch(error => console.log(error))
   })
   .catch(error => console.log(error));
@@ -99,3 +107,25 @@ module.exports = {
   }
 
 }
+
+
+
+
+
+  // create (req, res) {
+  //     Comments.create({
+  //     review: req.body.review,
+  //     comment: req.body.comment,
+  //   }).then(comment => {
+  //     News.create({
+  //       commentId: comment.id,
+  //       newsType: 'comment'
+  //     })
+  //       .then(news => res.status(201).send(news))
+  //       .catch(error => console.log(error))
+  //   })
+  //   .catch(error => {
+  //     console.log(error);
+  //     res.status(400).send(error);
+  //   });
+  // },
