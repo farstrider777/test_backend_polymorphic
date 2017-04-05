@@ -31,4 +31,5 @@ module.exports = (app) => {
   app.get('/userreviews/:userId',ReviewsController.getReviewsUser);
   app.get('/me',middleware.authenticate, UsersController.verify);
   app.post('/follow/:userId',middleware.authenticate, FollowController.postFollow);
+  app.get('/followers/:userId',FollowController.getFollowers)
 };
