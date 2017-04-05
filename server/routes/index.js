@@ -4,7 +4,9 @@ const UserShowsController = require("../controllers/UserShowsController");
 const ReviewsController = require("../controllers/ReviewsController");
 const CommentsController = require("../controllers/CommentsController");
 const FollowController = require("../controllers/FollowController");
+const NewsController = require("../controllers/NewsController");
 const middleware = require("../middleware");
+
 
 module.exports = (app) => {
   app.use(function(req, res, next) {
@@ -34,4 +36,5 @@ module.exports = (app) => {
   app.get('/followers/:userId',FollowController.getFollowers);
   app.get('/following/:userId',FollowController.getFollowing);
   app.delete('/deletefollowing/:userId',FollowController.deleteFollowing);
+  app.get('/news/:userId',NewsController.getYourNews);
 };
