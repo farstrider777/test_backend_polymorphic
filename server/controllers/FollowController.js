@@ -9,7 +9,7 @@ module.exports = {
       followedId: req.params.userId
     }).then(follow => {
       News.create({
-        commentId: follow.id,
+        followingId: follow.id,
         newsType: 'follow'
       })
       .then(news => res.status(201).send(news))
