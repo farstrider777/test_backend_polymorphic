@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: 'followerId'
         });
 
-        associate: function(models) {
+
           Relationships.belongsTo(models.Users, {
               foreignKey: 'followedId'
           });
