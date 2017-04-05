@@ -48,7 +48,7 @@ module.exports = {
   deleteFollowing (req, res){
     Relationships.destroy({
      where: {
-                followedId:req.params.id
+                followedId:req.params.userId
             }
       })
     .then(reviews => res.status(201).send(reviews))
