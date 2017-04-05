@@ -6,8 +6,14 @@ module.exports = {
       Comments.create({
       review: req.body.review,
       comment: req.body.comment,
+    }).then(comment => {
+      News.create({
+        commentId: comment.id,
+        newsType: 'comment'
+      })
+        .then(news => res.status(201).send(news))
+        .catch(error => console.log(error))
     })
-    .then(users => res.status(201).send(users))
     .catch(error => res.status(400).send(error));
   },
 
@@ -28,3 +34,35 @@ module.exports = {
     .catch(error => res.status(400).send(error));
   }
 }
+
+// create (req, res) {
+//   UserShows.findOrCreate({
+//     where: {
+//       userId: req.user.id,
+//       showId: req.body.showId,
+//       showName: req.body.showName,
+//     },
+//     defaults: {
+//       seenIt: true
+//     }
+//   })
+//   .then(userShow => {
+//     console.log("show is: ", req.body.showId)
+//     Reviews.create({
+//       //will change userId
+//     userId: req.user.id,
+//     showId: req.body.showId,
+//     //userShow: userShow.id,
+//     ranking: req.body.ranking,
+//     review: req.body.review,
+//     showName: req.body.showName,
+//     seenIt: true,
+//     posterPath: req.body.posterPath,
+//     backgroundPath: req.body.backgroundPath,
+//     showDescription: req.body.showDescription
+//   })
+//   .then(reviews => res.status(201).send(reviews))
+//   .catch(error => console.log(error))
+// })
+// .catch(error => console.log(error));
+// },
