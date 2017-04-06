@@ -22,21 +22,21 @@ module.exports = function(sequelize, DataTypes) {
           foreignKey: 'userId'
         });
 
-        Users.belongsToMany(models.Users, {
-          through: 'Relationships',
-          foreignKey: 'followedId',
-          as: 'followers'
-        })
-
-        // Users.hasMany(models.Relationships, {
-        //   foreignKey: 'followerId',
-        //   as: 'following'
-        // });
-        //
-        // Users.hasMany(models.Relationships, {
+        // Users.belongsToMany(models.Users, {
+        //   through: 'Relationships',
         //   foreignKey: 'followedId',
         //   as: 'followers'
-        // });
+        // })
+
+        Users.hasMany(models.Relationships, {
+          foreignKey: 'followerId',
+          as: 'following'
+        });
+
+        Users.hasMany(models.Relationships, {
+          foreignKey: 'followedId',
+          as: 'followers'
+        });
       }
       //associate2
 
