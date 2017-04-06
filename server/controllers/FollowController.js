@@ -24,7 +24,7 @@ module.exports = {
   getFollowers (req, res){
     Relationships.findAll({
       include: [
-        {model: Users, as: 'followed'},
+        {model: Users, as: 'following'},
       ],
       order: [
         ['id', 'DESC']
@@ -55,7 +55,7 @@ module.exports = {
   getFollowing (req, res){
     Relationships.findAll({
       include: [
-        {model: Users, as: 'follower'},
+        {model: Users, as: 'followers'},
       ],
       order: [
         ['id', 'DESC']
