@@ -22,13 +22,13 @@ module.exports = function(sequelize, DataTypes) {
           foreignKey: 'userId'
         });
 
-        Users.hasMany(models.Relationships, {
-          foreignKey: 'followerId'
-        });
-
         // Users.hasMany(models.Relationships, {
-        //   foreignKey: 'followedId'
+        //   foreignKey: 'followerId'
         // });
+
+        Users.hasMany(models.Relationships, {
+          foreignKey: 'followedId'
+        });
       }
       //associate2
 

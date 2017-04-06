@@ -6,14 +6,14 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        Relationships.belongsTo(models.Users, {
-            foreignKey: 'followerId'
-        });
+        // Relationships.belongsTo(models.Users, {
+        //     foreignKey: 'followerId'
+        // });
 
 
-          // Relationships.belongsTo(models.Users, {
-          //     foreignKey: 'followedId'
-          // });
+          Relationships.belongsTo(models.Users, {
+              foreignKey: 'followedId'
+          });
         // associations can be defined here
       }
     }
