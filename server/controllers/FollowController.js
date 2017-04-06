@@ -24,7 +24,7 @@ module.exports = {
   getFollowers (req, res){
     Relationships.findAll({
       include: [
-        {model: Users},
+        {model: Users, as: 'followed'},
       ],
       order: [
         ['id', 'DESC']
@@ -37,10 +37,25 @@ module.exports = {
     .catch(error => res.status(400).send(error));
   },
 
+  // getProfile (req, res) {
+  //   User.findById(req.params.id, {
+  //     include: [{
+  //       model: Relationships, as: 'following', include: [Users]
+  //     }, {
+  //       model: Relationships, as: 'followers', include: [Users]
+  //     }, {
+  //       model: Reviews
+  //     }, {
+  //       model: Comments
+  //     }]
+  //   })
+  //   .then(user => res.status(200).send(user))
+  // }
+
   getFollowing (req, res){
     Relationships.findAll({
       include: [
-        {model: Users},
+        {model: Users, as: 'follower'},
       ],
       order: [
         ['id', 'DESC']
