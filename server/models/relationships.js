@@ -11,9 +11,9 @@ module.exports = function(sequelize, DataTypes) {
         });
 
 
-          Relationships.belongsTo(models.Users, {
-              foreignKey: 'followedId'
-          });
+          // Relationships.belongsTo(models.Users, {
+          //     foreignKey: 'followedId'
+          // });
         // associations can be defined here
       }
     }

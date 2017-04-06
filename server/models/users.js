@@ -26,9 +26,9 @@ module.exports = function(sequelize, DataTypes) {
           foreignKey: 'followerId'
         });
 
-        Users.hasMany(models.Relationships, {
-          foreignKey: 'followedId'
-        });
+        // Users.hasMany(models.Relationships, {
+        //   foreignKey: 'followedId'
+        // });
       }
       //associate2
 
