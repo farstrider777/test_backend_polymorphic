@@ -12,7 +12,7 @@ module.exports = {
         {model: Users},
         {model: Relationships},
         {model: Comments},
-        {model: Reviews}
+        //{model: Reviews}
       ],
       order: [
         ['id', 'DESC']
