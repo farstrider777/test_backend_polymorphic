@@ -19,6 +19,9 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: 'followingId'
         });
 
+        News.belongsTo(models.Comments, {
+            foreignKey: 'commentId'
+        });
       }
     }
   });

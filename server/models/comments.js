@@ -11,11 +11,10 @@ module.exports = function(sequelize, DataTypes) {
         })
       },
 
-      // associate: function(models) {
-      //   UserShows.hasOne(models.Reviews, {
-      //       foreignKey: 'userShow'
-      //   })
-      // }
+      Comments.hasOne(models.News, {
+          foreignKey: 'commentId',
+          //as: 'followers'
+      });
     }
   });
   return Comments;
