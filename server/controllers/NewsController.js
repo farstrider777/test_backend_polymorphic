@@ -4,12 +4,12 @@ const News = require("../models").News
 module.exports = {
   getYourNews (req, res){
     News.findAll({
-      // include: [
-      //   {model: Users},
-      // ],
-      // order: [
-      //   ['id', 'DESC']
-      // ],
+      include: [
+        {model: Users},
+      ],
+      order: [
+        ['id', 'DESC']
+      ],
       where: {
         userId: req.params.userId
       },

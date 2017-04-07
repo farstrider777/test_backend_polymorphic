@@ -10,6 +10,9 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
+        News.belongsTo(models.Users, {
+            foreignKey: 'userId'
+        });
         // associations can be defined here
       }
     }

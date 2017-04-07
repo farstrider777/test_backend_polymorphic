@@ -37,6 +37,11 @@ module.exports = function(sequelize, DataTypes) {
           foreignKey: 'followedId',
           as: 'followers'
         });
+
+        Users.hasMany(models.News, {
+          foreignKey: 'userId',
+          //as: 'followers'
+        });
       }
       //associate2
 
