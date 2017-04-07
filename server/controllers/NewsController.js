@@ -8,7 +8,7 @@ module.exports = {
     News.findAll({
       include: [
         {model: Users},
-        {model: Comments}
+        {model: Relationships}
       ],
       order: [
         ['id', 'DESC']
