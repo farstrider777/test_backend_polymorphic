@@ -26,6 +26,10 @@ module.exports = function(sequelize, DataTypes) {
         Reviews.hasMany(models.Comments, {
             foreignKey: 'review'
         });
+
+        Reviews.hasOne(models.News, {
+            foreignKey: 'reviewId',
+        });
       }
 
 

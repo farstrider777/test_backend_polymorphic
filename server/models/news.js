@@ -22,6 +22,10 @@ module.exports = function(sequelize, DataTypes) {
         News.belongsTo(models.Comments, {
             foreignKey: 'commentId'
         });
+
+        News.belongsTo(models.Comments, {
+            foreignKey: 'reviewId'
+        });
       }
     }
   });

@@ -2,6 +2,7 @@ const News = require("../models").News
 const Users = require("../models").Users
 const Relationships = require("../models").Relationships
 const Comments = require("../models").Comments
+const Reviews = require("../models").Reviews
 
 
 module.exports = {
@@ -10,7 +11,8 @@ module.exports = {
       include: [
         {model: Users},
         {model: Relationships},
-        {model: Comments}
+        {model: Comments},
+        {model: Reviews}
       ],
       order: [
         ['id', 'DESC']
