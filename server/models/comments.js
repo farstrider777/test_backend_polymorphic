@@ -6,15 +6,17 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
+
         Comments.belongsTo(models.Reviews,{
           foreignKey: 'review'
-        })
-      },
+        });
 
-      Comments.hasOne(models.News, {
-          foreignKey: 'commentId',
-          //as: 'followers'
-      });
+
+        Comments.hasOne(models.News, {
+            foreignKey: 'commentId',
+            //as: 'followers'
+          });
+      },
     }
   });
   return Comments;
