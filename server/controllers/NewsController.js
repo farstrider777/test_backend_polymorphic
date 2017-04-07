@@ -1,4 +1,5 @@
 const News = require("../models").News
+const Users = require("../models").Users
 
 
 module.exports = {
