@@ -85,7 +85,7 @@ create (req, res) {
   verify (req, res){
     // console.log(req.user)
     return res.status(200).send(req.user);
-  }
+  },
 
   getUser (req, res){
     Users.findAll(
