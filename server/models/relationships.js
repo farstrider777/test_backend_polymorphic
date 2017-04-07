@@ -16,6 +16,10 @@ module.exports = function(sequelize, DataTypes) {
             as: 'followers'
         });
         // associations can be defined here
+        Relationships.hasOne(models.News, {
+            foreignKey: 'followingId',
+            //as: 'followers'
+        });
       }
     }
   });

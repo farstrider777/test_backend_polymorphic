@@ -1,5 +1,6 @@
 const News = require("../models").News
 const Users = require("../models").Users
+const Relationships = require("../models").Relationships
 
 
 module.exports = {
@@ -7,6 +8,7 @@ module.exports = {
     News.findAll({
       include: [
         {model: Users},
+        {model: Comments}
       ],
       order: [
         ['id', 'DESC']

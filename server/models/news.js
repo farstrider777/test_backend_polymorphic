@@ -14,6 +14,11 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: 'userId'
         });
         // associations can be defined here
+
+        News.belongsTo(models.Relationships, {
+            foreignKey: 'followingId'
+        });
+
       }
     }
   });
