@@ -20,7 +20,8 @@ module.exports = (app) => {
   app.post('/login',UsersController.login);
   app.put('/updateuser',middleware.authenticate,UsersController.update);
   app.get('/users',UsersController.index);
-  app.delete('/users/:id',UsersController.destroy);
+  app.get('/users/:id',UsersController.getUser);
+  app.delete('/usersdelete/:id',UsersController.destroy);
   // maybe remove usershows route if we dont' use it to make watchlist or something
   app.post('/usershows', middleware.authenticate, UserShowsController.create);
   app.get('/usershows/:id',UserShowsController.getShowUser);
@@ -34,7 +35,7 @@ module.exports = (app) => {
   app.get('/me',middleware.authenticate, UsersController.verify);
   app.post('/follow/:userId',middleware.authenticate, FollowController.postFollow);
   app.get('/followers/:userId',FollowController.getFollowers);
-  app.get('/following/:userId',FollowController.getFollowing);
+  app.g.///.et('/following/:userId',FollowController.getFollowing);
   app.delete('/deletefollowing/:userId',FollowController.deleteFollowing);
   app.get('/news/:userId',NewsController.getYourNews);
 };

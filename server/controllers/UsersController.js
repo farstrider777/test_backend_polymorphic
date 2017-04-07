@@ -87,4 +87,14 @@ create (req, res) {
     return res.status(200).send(req.user);
   }
 
+  getUser (req, res){
+    Users.findAll(
+      where: {
+        id: req.params.id
+      }
+    )
+    .then(users => res.status(201).send(users))
+    .catch(error => res.status(400).send(error));
+  }
+
 };
