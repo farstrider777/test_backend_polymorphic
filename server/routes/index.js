@@ -34,8 +34,9 @@ module.exports = (app) => {
   app.get('/userreviews/:userId',ReviewsController.getReviewsUser);
   app.get('/me',middleware.authenticate, UsersController.verify);
   app.post('/follow/:userId',middleware.authenticate, FollowController.postFollow);
+  //app.delete('/deletefollower/:userId',FollowController.deleteFollower);
   app.get('/followers/:userId',FollowController.getFollowers);
   app.get('/following/:userId',FollowController.getFollowing);
-  app.delete('/deletefollowing/:userId',FollowController.deleteFollowing);
+  app.delete('/deletefollowing/:userId',middleware.authenticate,FollowController.deleteFollowing);
   app.get('/news/:userId',NewsController.getYourNews);
 };
