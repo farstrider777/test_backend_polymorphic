@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: 'commentId'
         });
 
-        News.belongsTo(models.Comments, {
+        News.belongsTo(models.Reviews, {
             foreignKey: 'reviewId'
         });
       }
