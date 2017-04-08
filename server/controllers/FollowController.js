@@ -8,16 +8,17 @@ module.exports = {
     Relationships.create({
       followerId: req.user.id,
       followedId: req.params.userId
-    }).then(follow => {
-      News.create({
-        userId: req.user.id,
-        followingId: follow.id,
-        newsType: 'follow'
-      })
-      .then(news => res.status(201).send(news))
-      .catch(error => console.log(error))
     })
-    //.then(reviews => res.status(201).send(reviews))
+    // .then(follow => {
+    //   News.create({
+    //     userId: req.user.id,
+    //     followingId: follow.id,
+    //     newsType: 'follow'
+    //   })
+    //   .then(news => res.status(201).send(news))
+    //   .catch(error => console.log(error))
+    // })
+    .then(reviews => res.status(201).send(reviews))
     .catch(error => console.log(error))
   },
 
