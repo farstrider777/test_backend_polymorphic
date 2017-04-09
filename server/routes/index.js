@@ -5,6 +5,7 @@ const ReviewsController = require("../controllers/ReviewsController");
 const CommentsController = require("../controllers/CommentsController");
 const FollowController = require("../controllers/FollowController");
 const NewsController = require("../controllers/NewsController");
+const RankingsController = require("../controllers/RankingsController");
 const middleware = require("../middleware");
 
 
@@ -39,4 +40,5 @@ module.exports = (app) => {
   app.get('/following/:userId',FollowController.getFollowing);
   app.delete('/deletefollowing/:userId',middleware.authenticate,FollowController.deleteFollowing);
   app.get('/news/:userId',NewsController.getYourNews);
+  app.post('/rankings/:userId',middleware.authenticate,RankingsController.create)
 };
