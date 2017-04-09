@@ -40,5 +40,5 @@ module.exports = (app) => {
   app.get('/following/:userId',FollowController.getFollowing);
   app.delete('/deletefollowing/:userId',middleware.authenticate,FollowController.deleteFollowing);
   app.get('/news/:userId',NewsController.getYourNews);
-  app.post('/rankings',middleware.authenticate,RankingsController.create)
+  app.post('/rankings/:userId',middleware.authenticate,RankingsController.create)
 };
