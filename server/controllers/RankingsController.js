@@ -23,5 +23,23 @@ module.exports = {
     })
     .then((rank)=> res.status(200).send(rank))
     .catch(error => res.status(400).send(error));
+  },
+
+  updateRankings (req,res){
+
+    Ranker.update({
+      {
+        rankings: req.body.rankings
+      },
+
+      where: {
+                 listId: 1,
+                 userId:req.params.userId
+             }
+
+    })
+    .then((rank)=> res.status(200).send(rank))
+    .catch(error => res.status(400).send(error));
   }
+
 }

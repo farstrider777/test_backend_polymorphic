@@ -42,4 +42,5 @@ module.exports = (app) => {
   app.get('/news/:userId',NewsController.getYourNews);
   app.post('/rankings/:userId',middleware.authenticate,RankingsController.create)
   app.get('/getrankings/:userId',RankingsController.getRankings)
+  app.put('/updaterankings/:userId',RankingsController.updateRankings)
 };
