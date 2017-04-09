@@ -26,7 +26,8 @@ module.exports = {
   },
 
   updateRankings (req,res){
-
+    console.log(req.body.rankings)
+    console.log(req.params.userId)
     Ranker.update({
         rankings: req.body.rankings
       },
@@ -35,7 +36,7 @@ module.exports = {
                  listId: 1,
                  userId:req.params.userId
                }
-      }     
+      }
 
     )
     .then((rank)=> res.status(200).send(rank))
