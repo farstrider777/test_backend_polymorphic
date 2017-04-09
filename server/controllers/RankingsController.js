@@ -13,6 +13,7 @@ module.exports = {
   },
 
   getRankings (req,res){
+    console.log("hello")
     Ranker.findAll({
       // where: {
       //            listId: 1,
