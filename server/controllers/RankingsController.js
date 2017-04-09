@@ -15,7 +15,7 @@ module.exports = {
   getRankings (req,res){
     Ranker.findAll({
       where: {
-                 listId: 1,
+                 //listId: 1,
                  userId:req.params.id
              }
 
