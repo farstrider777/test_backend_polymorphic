@@ -14,10 +14,10 @@ module.exports = {
 
   getRankings (req,res){
     Ranker.findAll({
-      where: {
-                 listId: 1,
-                 userId:req.params.userId
-             }
+      // where: {
+      //            listId: 1,
+      //            userId:req.params.userId
+      //        }
 
     })
     .then((rank)=> res.status(200).send(rank))
