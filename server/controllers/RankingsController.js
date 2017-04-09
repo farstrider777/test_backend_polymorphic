@@ -28,9 +28,9 @@ module.exports = {
   updateRankings (req,res){
 
     Ranker.update({
-      {
+
         rankings: req.body.rankings
-      },
+      
 
       where: {
                  listId: 1,
