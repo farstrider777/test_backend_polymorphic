@@ -11,4 +11,16 @@ module.exports = {
     .then((rank)=> res.status(200).send(rank))
     .catch(error => res.status(400).send(error));
   },
+
+  getRankings (req,res){
+    Ranker.findAll({
+      where: {
+                 listId: 1,
+                 userId:req.params.id
+             }
+
+    })
+    .then((rank)=> res.status(200).send(rank))
+    .catch(error => res.status(400).send(error));
+  }
 }
