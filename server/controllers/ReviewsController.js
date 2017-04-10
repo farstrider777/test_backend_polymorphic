@@ -36,10 +36,10 @@ module.exports = {
         reviewId: review.id,
         newsType: 'review'
       })
-        .then(news => res.status(201).send(news))
+        //.then(news => res.status(201).send(news))
         .catch(error => console.log(error))
     })
-    //.then(reviews => res.status(201).send(reviews))
+    .then(reviews => res.status(201).send(reviews))
     .catch(error => console.log(error))
   })
   .catch(error => console.log(error));
