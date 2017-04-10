@@ -7,6 +7,8 @@ module.exports = {
       Comments.create({
       review: req.body.review,
       comment: req.body.comment,
+      profileUrl: req.body.profileUrl,
+      userName: req.body.userName
     }).then(comment => {
       News.create({
         userId: req.user.id,
