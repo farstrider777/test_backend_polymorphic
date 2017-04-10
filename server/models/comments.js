@@ -4,8 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     review: DataTypes.INTEGER,
     comment: DataTypes.TEXT,
     profileUrl: DataTypes.STRING,
-    userName: DataTypes.STRING
-
+    userName: DataTypes.STRING 
   }, {
     classMethods: {
       associate: function(models) {
