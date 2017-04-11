@@ -76,7 +76,7 @@ module.exports = {
                 followerId:req.user.id
             }
       })
-    .then(reviews => res.status(201).send(reviews))
+    .then(relationships => res.status(201).send(relationships))
     .catch(error => res.status(400).send(error));
   }
 
