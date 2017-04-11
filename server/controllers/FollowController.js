@@ -77,7 +77,10 @@ module.exports = {
             }
       })
     .then(relationships => res.status(201).send(relationships))
-    .catch(error => res.status(400).send(error));
+    .catch(error => {
+      console.log(error);
+      res.status(400).send(error));
+    }
   }
 
 }
