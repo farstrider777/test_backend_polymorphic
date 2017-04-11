@@ -79,8 +79,11 @@ module.exports = {
                 followedId:req.params.userId,
                 followerId:req.user.id
             }
-      })
-    .then(relationships => res.status(201).send(relationships))
+      })                   //res.send(201)
+    .then(relationships => res.status(201).send({
+      deletedId: req.params.userId,
+      deletedCount: relationships
+    }))
     .catch(error => {
       console.log(error);
       res.status(400).send(error);
