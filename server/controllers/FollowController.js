@@ -69,6 +69,10 @@ module.exports = {
     .catch(error => res.status(400).send(error));
   },
 
+  // var foo = function (x, y, z) { body }
+  // function whatever (args) { body }
+  // (x, y, z) => { body }
+
   deleteFollowing (req, res){
     Relationships.destroy({
      where: {
@@ -79,8 +83,8 @@ module.exports = {
     .then(relationships => res.status(201).send(relationships))
     .catch(error => {
       console.log(error);
-      res.status(400).send(error));
-    }
+      res.status(400).send(error);
+    })
   }
 
 }
