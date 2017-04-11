@@ -80,7 +80,7 @@ module.exports = {
                 followerId:req.user.id
             }
       })                   //res.send(201)
-    .then(relationships => res.status(201).send({
+    .then(relationships => res.status(204).send({
       deletedId: req.params.userId,
       deletedCount: relationships
     }))
