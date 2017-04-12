@@ -26,8 +26,6 @@ module.exports = {
   },
 
   updateRankings (req,res){
-    console.log(req.body.rankings)
-    console.log(req.params.userId)
     Ranker.update({
         rankings: req.body.rankings
       },

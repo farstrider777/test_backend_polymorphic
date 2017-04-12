@@ -39,19 +39,17 @@ Adds a user to Users. Info needed in the body is:
 ----
 POST /login
 
-Must have correct password and email!
-
-Returns a token and your info. Info needed in the body is:
+Must have correct password and email. Info needed in the body is:
 
 * email: string
 * hashedPassword: string
 
+Returns a token and your info.
+
 ----
 PUT /updateuser
 
-Must have a valid access-token in the headers.
-
-Uses middleware to see what user you are based your access-token. If you put any of these fields in the body their values will be updated for that user:
+Must have a valid access-token in the headers. Optional fields in the body are:
 
 * profileUrl: string
 * backgroundUrl: string
@@ -59,6 +57,8 @@ Uses middleware to see what user you are based your access-token. If you put any
 * lastName: string
 * email: string
 * city: string
+
+Uses middleware to see what user you are based your access-token. Then updates whichever fields you entered in the body and leaves the other values unchanged.
 
 ----
 GET /users
@@ -88,8 +88,11 @@ POST /usershows
 
 Info needed in the body is:
 
+* showId: string
 * showName: string
 * seenIt: boolean
+
+Posts information on what showId and showName a user has seen.
 
 ---
 GET /usershows/:id
@@ -237,7 +240,7 @@ You will need a valid access-token in the headers to use this route. Info needed
 Info needed in the body is:
 
 * listId: integer
-* rankings: string
+* rankings: text
 
 This route will post a users rankings for a specific list id. Rankings need to be in a string of comma separated showId's.
 
@@ -248,13 +251,20 @@ Info needed in the url params is:
 
 * userId: integer
 
-This will get the rankings string for a specific user with a listId of one. 
+This will get the rankings string for a specific user with a listId of one.
 
+---
+PUT /updaterankings/:userId
 
+You will need a valid access-token in the headers to use this route. Info needed in the url params is:
 
+* userId: integer
 
+Info needed in the body is
 
+* rankings: text
 
+This route will update the rankings for a specific user. The rankings need to be a string of comma separated showIds.
 
-
-https://obscure-eyrie-45843.herokuapp.com/ | https://git.heroku.com/obscure-eyrie-45843.git
+---
+This back end is designed for the following project: https://github.com/rjowers/Final-Project-Frontend
